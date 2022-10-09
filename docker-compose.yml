@@ -35,17 +35,17 @@ volumes:
     driver_opts:
       type: 'none'
       o: 'bind'
-      device: './db_data'
+      device: 'db_data'
   wp_data:
   themes:
     driver: local
     driver_opts:
       type: 'none'
       o: 'bind'
-      device: './themes'
+      device: 'themes'
   plugins:
     driver: local
     driver_opts:
       type: 'none'
       o: 'bind'
-      device: './plugins'
+      device: 'plugins'
