@@ -5,7 +5,7 @@ services:
     #authentication plugin for mariadb..outdated?
     command: '--default-authentication-plugin=mysql_native_password'
     volumes:
-      - ./db_data:/var/lib/mysql
+      - ../db_data:/var/lib/mysql
     restart: always
     environment:
       - MYSQL_ROOT_PASSWORD=password
@@ -18,8 +18,7 @@ services:
   wordpress:
     image: wordpress:6.0
     volumes:
-      - wp_data:/var/www/html
-      - ./wp-content:/var/www/html/wp-content
+      ["../:/var/www/html"]
     ports:
       - 80:80
     restart: always
